@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+</head>
+<body>
+    <h1>Video Player</h1>
+    <form id="video-form">
+        <label for="video-url">Enter Video URL:</label>
+        <input type="text" id="video-url" name="video-url">
+        <button type="submit">Play</button>
+    </form>
+    <br>
+    <button onclick="playDemo()">Play Demo Video</button>
+
+    <script>
+        function playDemo() {
+            window.location.href = "video.html";
+        }
+
+        const form = document.getElementById("video-form");
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const url = document.getElementById("video-url").value.trim();
+            if (url) {
+                window.location.href = "video.html?src=" + encodeURIComponent(url);
+            }
+        });
+    </script>
+</body>
+</html>
