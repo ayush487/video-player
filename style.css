@@ -13,11 +13,87 @@ body {
   background-color: #e3e3e3;
   background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%234f4f51' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
   display: flex;
+  flex-direction:column ;
   justify-content: center;
   align-items: center;
   font-family: Helvetica, sans-serif;
 }
 
+.input-container {
+  height: 80px;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+.input-container form {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+
+.input-group {
+  display:flex;
+  flex-direction: column;
+  width: 50vw;
+  margin-left: 10px;
+}
+.input-group input {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 100%;
+  height: 35px;
+  font-size: 16px;
+  box-sizing: border-box;
+  outline: none;
+  border: 2px solid rgba(128,128,128);
+  border-radius: 10px ;
+  padding: 5px;
+}
+.suggestion {
+  visibility: hidden;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+  font-weight: 100;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: relative;
+  bottom: 0;
+  cursor: pointer;
+  padding: 0px 4px;
+  width: 100%;
+  height: 25px;
+  box-sizing: border-box;
+  transition-delay: 200ms;
+}
+.input-group input:focus + .suggestion {
+  visibility: visible;
+}
+
+.button-div {
+  width: 50px;
+}
+.button-div button {
+  height: 35px;
+  border-radius: 10px;
+  border: 2px solid rgb(128,128,128);
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(128,128,128);
+  cursor: pointer;
+  background-color: whitesmoke;
+  filter: brightness(110%);
+  user-select: none;
+  -webkit-user-select: none;
+}
+.button-div button:hover {
+  filter: brightness(100%);
+}
+.button-div button i {
+  color: rgb(128,128,128);
+  font-size: 16px
+}
 .fas {
   color: var(--font-color);
   font-size: 35px;

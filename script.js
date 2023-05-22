@@ -1,3 +1,6 @@
+const inputForm = document.getElementById("input-form")
+const suggestionInput = document.querySelector("#link-input")
+const suggestionBox = document.getElementById("suggestion-box")
 const player = document.querySelector('.player')
 const video = document.querySelector('video')
 const progressRange = document.querySelector('.progress-range')
@@ -151,7 +154,23 @@ const toggleFullScreen = () => {
     }
 }
 
+const playVideoFromLink = (e) => {
+    e.preventDefault()
+    const link = e.srcElement[0].value
+    if(!link) {
+        return
+    }
+    video.src = link
+}
+
+const fillSuggestion = () => {
+    const suggestionLink = suggestionBox.textContent
+    suggestionInput.value = suggestionLink
+    // console.log(suggestionLink)
+}
+
 // Event Listeners
+inputForm.addEventListener("submit", playVideoFromLink)
 playBtn.addEventListener('click', togglePlay)
 video.addEventListener('click', togglePlay)
 video.addEventListener('timeupdate', updateProgress)
@@ -161,3 +180,5 @@ volumeRange.addEventListener('click', changeVolume)
 volumeIcon.addEventListener('click', toggleMute)
 speed.addEventListener('change', changeSpeed)
 fullscreenBtn.addEventListener('click', toggleFullScreen)
+
+// console.log(suggestionInput, suggestionBox)

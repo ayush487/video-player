@@ -15,9 +15,22 @@
     <!-- https://pixabay.com/videos/download/video-28745_source.mp4?attachment -->
     <!-- Ocean (720P)-->
     <!-- https://pixabay.com/videos/download/video-31377_tiny.mp4?attachment -->
+
+    <div class="input-container">
+        <form id="input-form">
+            <div class="input-group">
+                <input type="text" id="link-input" name="videoLink" placeholder="Paste your video link here">
+                <div class="suggestion" id="suggestion-box" onclick="fillSuggestion()">sample-video.mp4</div>
+            </div>
+            <div class="input-group button-div">
+                <button type="submit"><i class="fas fa-play"></i></button>
+            </div>
+            
+        </form>
+    </div>
     
     <div class="player">
-        <video src="video.mp4" class="video" playsinline ></video>
+        <video src="sample-video.mp4" class="video" playsinline ></video>
         <!-- Show Controls -->
         <div class="show-controls">
             <!-- Controls Container -->
